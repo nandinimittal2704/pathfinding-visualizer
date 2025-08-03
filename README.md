@@ -6,7 +6,7 @@ A fast, responsive web-based visualization tool for popular pathfinding algorith
 
 ## 🚀 **Live Demo**
 
-**🔗 [View Live Demo](https://yourusername.github.io/pathfinding-visualizer/)**
+**🔗 [View Live Demo](https://v0-pathfinding-visualizer-three.vercel.app/)** 
 
 ## ✨ **Features**
 
