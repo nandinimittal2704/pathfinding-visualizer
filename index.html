@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pathfinding Algorithm Visualizer</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <h1>🎯 Pathfinding Algorithm Visualizer</h1>
+            <p>Visualize how different algorithms find the shortest path!</p>
+        </header>
+
+        <!-- Control Panel -->
+        <div class="controls">
+            <div class="control-group">
+                <label for="algorithm-select">Algorithm:</label>
+                <select id="algorithm-select">
+                    <option value="bfs">BFS (Breadth-First Search)</option>
+                    <option value="dfs">DFS (Depth-First Search)</option>
+                    <option value="dijkstra">Dijkstra's Algorithm</option>
+                    <option value="astar">A* Algorithm</option>
+                </select>
+            </div>
+
+            <div class="control-group">
+                <label for="speed-slider">Speed:</label>
+                <input type="range" id="speed-slider" min="1" max="100" value="50">
+                <span id="speed-value">50ms</span>
+            </div>
+
+            <div class="button-group">
+                <button id="start-btn" class="btn btn-primary">Start Pathfinding</button>
+                <button id="clear-btn" class="btn btn-secondary">Clear Path</button>
+                <button id="reset-btn" class="btn btn-danger">Reset Grid</button>
+            </div>
+        </div>
+
+        <!-- Legend -->
+        <div class="legend">
+            <div class="legend-item">
+                <div class="legend-color start"></div>
+                <span>Start Node</span>
+            </div>
+            <div class="legend-item">
+                <div class="legend-color end"></div>
+                <span>End Node</span>
+            </div>
+            <div class="legend-item">
+                <div class="legend-color wall"></div>
+                <span>Wall</span>
+            </div>
+            <div class="legend-item">
+                <div class="legend-color visited"></div>
+                <span>Visited</span>
+            </div>
+            <div class="legend-item">
+                <div class="legend-color path"></div>
+                <span>Shortest Path</span>
+            </div>
+        </div>
+
+        <!-- Instructions -->
+        <div class="instructions">
+            <h3>How to Use:</h3>
+            <ul>
+                <li><strong>Click</strong> on empty cells to place start node (first click) and end node (second click)</li>
+                <li><strong>Click and drag</strong> to draw walls</li>
+                <li><strong>Select an algorithm</strong> and click "Start Pathfinding"</li>
+                <li><strong>Adjust speed</strong> to control visualization speed</li>
+                <li><strong>Clear Path</strong> removes visited nodes and path, keeping walls</li>
+                <li><strong>Reset Grid</strong> clears everything</li>
+            </ul>
+        </div>
+
+        <!-- Grid Container -->
+        <div class="grid-container">
+            <div id="grid" class="grid"></div>
+        </div>
+
+        <!-- Statistics -->
+        <div class="stats" id="stats" style="display: none;">
+            <div class="stat-item">
+                <span class="stat-label">Nodes Visited:</span>
+                <span id="nodes-visited">0</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-label">Path Length:</span>
+                <span id="path-length">0</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-label">Time Taken:</span>
+                <span id="time-taken">0ms</span>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
